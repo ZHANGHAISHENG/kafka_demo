@@ -17,7 +17,8 @@ public class Producer extends Thread {
 
     public Producer(String topic, Boolean isAsync) {
         Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaProperties.KAFKA_SERVER_URL + ":" + KafkaProperties.KAFKA_SERVER_PORT);
+        //props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaProperties.KAFKA_SERVER_URL + ":" + KafkaProperties.KAFKA_SERVER_PORT);
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,  KafkaProperties.CLUSTER_SERVER);
         props.put("retries", 0);
         props.put("batch.size", 16384);
         props.put("linger.ms", 1); //  linger.ms大于0。这将指示生产者发送请求之前等待一段时间，希望更多的消息填补到未满的批中
