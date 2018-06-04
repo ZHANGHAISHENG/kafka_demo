@@ -12,11 +12,11 @@ package com.test;
 public class KafkaConsumerProducerDemo {
     public static void main(String[] args) {
         boolean isAsync = true;
-        //Producer producerThread = new Producer(KafkaProperties.TOPIC, isAsync);
-        //producerThread.start();
+        Producer producerThread = new Producer(KafkaProperties.TOPIC, isAsync);
+        producerThread.start();
 
-        ConsumerOffsetUnAuto consumerThread = new ConsumerOffsetUnAuto(KafkaProperties.TOPIC);
-        consumerThread.start();
+        //ConsumerOffsetUnAuto consumerThread = new ConsumerOffsetUnAuto(KafkaProperties.TOPIC);
+        //consumerThread.start();
 
     }
 }

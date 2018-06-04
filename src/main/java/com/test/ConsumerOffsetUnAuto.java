@@ -55,7 +55,7 @@ public class ConsumerOffsetUnAuto extends Thread {
                     System.out.println("Received message: (" + record.key() + ", " + record.value() + ") at offset " + record.offset());
                 }
                 long lastOffset = partitionRecords.get(partitionRecords.size() - 1).offset();
-                consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(lastOffset + 1)));
+                //consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(lastOffset + 1)));
                 //已提交的offset应始终是你的程序将读取的下一条消息的offset。因此，调用commitSync（offsets）时，你应该加1个到最后处理的消息的offset
             }
         }
